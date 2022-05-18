@@ -50,7 +50,7 @@ scrubPaths: ['request.query_string'],
 //  var sensitiveData = prompt ("Do you want to send sensitive data?")
   Rollbar.configure = prompt ("Do you want to send sensitive data?")
   Rollbar.configure = prompt ("Do you want to send errors to rollbar?")
-  Rollbar.configure = alert ("The errors are visible under the items tab?")
+  Rollbar.configure = alert ("The errors are visible under the items tab.")
   
     // console.log("Managing sensitive data");
 if( Rollbar.configure === "Yes"){
