@@ -80,6 +80,7 @@ else if ( Rollbar.configure === "No") {
 else ( Rollbar.configure === "")
 //    prompt ("Please,enter Yes or No.");
    Rollbar.error("Please,enter enter Yes or No.");
+   alert("Please enter Yes or No.")
 
 
 // USING A FORM
