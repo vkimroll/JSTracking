@@ -1,0 +1,9 @@
+.wrapper{
+    width: 350px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.wrapper label{
+    display: block;
+    margin: 0 .10em 0;
+}
