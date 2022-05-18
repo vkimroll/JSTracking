@@ -19,6 +19,11 @@ person: {
 id: 12345
 }
 },
+"server": {
+    "pid": 2882, 
+    "host": "plus_bkidevelopment_dev", 
+    "root": "/var/www/plus/releases/20220502060901Z"
+  }, 
 scrubFields: ['creditCardNumber'],
 scrubPaths: ['request.query_string'],
             environment: 'production',
@@ -44,11 +49,14 @@ scrubPaths: ['request.query_string'],
 
 //  var sensitiveData = prompt ("Do you want to send sensitive data?")
   Rollbar.configure = prompt ("Do you want to send sensitive data?")
-
+  Rollbar.configure = prompt ("Do you want to send errors to rollbar?")
+  Rollbar.configure = alert ("The errors are visible under the items tab?")
+  
     // console.log("Managing sensitive data");
 if( Rollbar.configure === "Yes"){
     // alert ("Sensitive data will be sent.");
     Rollbar.error("Sensitive data will be sent.");
+    alert ("Sensitive data will be sent.")
 }
 else if ( Rollbar.configure === "No") {
     // alert ("Sensitive data will not be sent.");
@@ -58,42 +66,57 @@ else ( Rollbar.configure === "")
 //    prompt ("Please,enter Yes or No.");
    Rollbar.error("Please,enter enter Yes or No.");
 
+   Rollbar.configure = prompt ("Do you want to send errors to rollbar?")
+
+   if( Rollbar.configure === "Yes"){
+    // alert ("Sensitive data will be sent.");
+    Rollbar.error("Please refer to our documentation to set this up.");
+   alert("Errors will be sent.")
+}
+else if ( Rollbar.configure === "No") {
+    // alert ("Sensitive data will not be sent.");
+    Rollbar.error("Data will not be sent.");
+}
+else ( Rollbar.configure === "")
+//    prompt ("Please,enter Yes or No.");
+   Rollbar.error("Please,enter enter Yes or No.");
+
 
 // USING A FORM
 // **Capture input with getElementById
 // const name = document.getElementById('name');
-Rollbar.configure = document.getElementById('name');
+// Rollbar.configure = document.getElementById('name');
 
-// const cardNumber = document.getElementById('cardNumber');
-Rollbar.configure = document.getElementById('cardNumber');
+// // const cardNumber = document.getElementById('cardNumber');
+// Rollbar.configure = document.getElementById('cardNumber');
 
-// const expMonth = document.getElementById('expMonth');
-Rollbar.configure = document.getElementById('expMonth');
+// // const expMonth = document.getElementById('expMonth');
+// Rollbar.configure = document.getElementById('expMonth');
 
-// const year = document.getElementById('year');
-Rollbar.configure = document.getElementById('year');
+// // const year = document.getElementById('year');
+// Rollbar.configure = document.getElementById('year');
 
-// const form = document.getElementById('form');
-Rollbar.configure = document.getElementById('form');
+// // const form = document.getElementById('form');
+// Rollbar.configure = document.getElementById('form');
 
 //Rollbar.configure replace 'form'
 //**Catch errors before they're submitted with addEventListener
-Rollbar.configure.addEventListener('submit', (e) => {
-// let messages = []
-if(Rollbar.configure.value === '' || Rollbar.configure.value == null){
-//  messages.push ('Name is required')
-alert('Name is required');
-Rollbar.error.push('Name is required');
-}
-if(Rollbar.configure === '' || Rollbar.configure == null){
-//  messages.push ('Please enter the card number')
-alert('Please enter the card number');
-Rollbar.error.push('Please enter the card number');
-}
-e.preventDefault()
-//  rollbar.captureEvent(metadata, level);
+// Rollbar.configure.addEventListener('submit', (e) => {
+// // let messages = []
+// if(Rollbar.configure.value === '' || Rollbar.configure.value == null){
+// //  messages.push ('Name is required')
+// alert('Name is required');
+// Rollbar.error.push('Name is required');
+// }
+// if(Rollbar.configure === '' || Rollbar.configure == null){
+// //  messages.push ('Please enter the card number')
+// alert('Please enter the card number');
+// Rollbar.error.push('Please enter the card number');
+// }
+// e.preventDefault()
+// //  rollbar.captureEvent(metadata, level);
 
-});
+// });
 
 
  

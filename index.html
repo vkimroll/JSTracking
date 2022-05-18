@@ -70,88 +70,11 @@
         //    prompt ("Please,enter Yes or No.");
            Rollbar.error("Please,enter enter Yes or No.");
 
+</script>
 
-// USING A FORM
-// **Capture input with getElementById
-// const name = document.getElementById('name');
-Rollbar.configure = document.getElementById('name');
-
-// const cardNumber = document.getElementById('cardNumber');
-Rollbar.configure = document.getElementById('cardNumber');
-
-// const expMonth = document.getElementById('expMonth');
-Rollbar.configure = document.getElementById('expMonth');
-
-// const year = document.getElementById('year');
-Rollbar.configure = document.getElementById('year');
-
-// const form = document.getElementById('form');
-Rollbar.configure = document.getElementById('form');
-
-//Rollbar.configure replace 'form'
-//**Catch errors before they're submitted with addEventListener
-    Rollbar.configure.addEventListener('submit', (e) => {
-    let messages = []
-    if(Rollbar.configure.value === '' || Rollbar.configure.value == null){
-        //  messages.push ('Name is required')
-        alert('Name is required');
-        Rollbar.error.push('Name is required');
-    }
-    if(Rollbar.configure === '' || Rollbar.configure == null){
-        //  messages.push ('Please enter the card number')
-        alert('Please enter the card number');
-        Rollbar.error.push('Please enter the card number');
-    }
-     e.preventDefault()
-    //  rollbar.captureEvent(metadata, level);
-     
-    });
-
-
-         
-       
-
-
-
-        //  var cardDetails ={
-        //      "credit_card":{
-        //          "first_name":"Val",
-        //          "last_name":"test",
-        //          "email":"valtest@mail.com",
-        //          "cardNumber":"44444466156",
-        //          "expMonth":"3/5",
-        //          "year":"2024",
-        //          "securityCode":"536",
-        //      }
-        //  }
-        
-        </script>
-
-             <h1>Managing sensitive data</h1>
-             
-             <div class="wrapper">
-                 <form  id="form">
-                     <label id="name">
-                        <input type="text" class="name" placeholder="Enter your full name" required> 
-                     </label>
-                        <label id="cardNumber">
-        <input type="text" class="cardNumber" placeholder="Enter a credit card number" required> 
-     </label>
-     <label id="expMonth">
-        <input type="text" class="expMonth" placeholder="Enter expiration month" required> 
-     </label>
-     <label id="year">
-        <input type="text" class="year" placeholder="Enter year" required> 
-     </label>
-       <input type="submit">  
-     </div>
-                 </form>  
     <body>
    
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+       <h2>Managing sensitive data</h2> 
        
     </body>
 </html>
