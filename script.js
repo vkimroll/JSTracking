@@ -51,6 +51,7 @@ scrubPaths: ['request.query_string'],
   Rollbar.configure = prompt ("Do you want to send sensitive data?")
   Rollbar.configure = prompt ("Do you want to send errors to rollbar?")
   Rollbar.configure = alert ("The errors are visible under the items tab.")
+  Rollbar.configure = prompt ("On a scale of 1-10, how helpful is rollbar to your team?")
   
     // console.log("Managing sensitive data");
 if( Rollbar.configure === "Yes"){
