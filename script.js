@@ -19,19 +19,21 @@ person: {
 id: 12345
 }
 },
-"server": {
-    "pid": 2882, 
-    "host": "plus_bkidevelopment_dev", 
-    "root": "/var/www/plus/releases/20220502060901Z"
+server: {
+    // id: 2882, 
+    // "host": "plus_bkidevelopment_dev", 
+    
   }, 
 scrubFields: ['creditCardNumber'],
 scrubPaths: ['request.query_string'],
             environment: 'production',
+            code_version: "7b57c50aef9eac7414df80d678766ca408dc6345",
             //context: 'home/index',
             //trace_id: 'abc123',
             client: {
               javascript: {
-                code_version: '1.0.0',
+                root: "http://localhost:52330/script.js",
+                // code_version: '1.0.0',
                 //source_map_enabled: true,
                 //guess_uncaught_frames: true
               }
@@ -46,6 +48,8 @@ scrubPaths: ['request.query_string'],
 
 // ****** Add script above. src="script.js
 //MANAGING SENSITIVE DATA
+
+
 
 //  var sensitiveData = prompt ("Do you want to send sensitive data?")
   Rollbar.configure = prompt ("Do you want to send sensitive data?")
@@ -86,8 +90,8 @@ else ( Rollbar.configure === "")
 
 // USING A FORM
 // **Capture input with getElementById
-// const name = document.getElementById('name');
-// Rollbar.configure = document.getElementById('name');
+const name = document.getElementById('name');
+Rollbar.configure = document.getElementById('name');
 
 // // const cardNumber = document.getElementById('cardNumber');
 // Rollbar.configure = document.getElementById('cardNumber');
@@ -103,13 +107,14 @@ else ( Rollbar.configure === "")
 
 //Rollbar.configure replace 'form'
 //**Catch errors before they're submitted with addEventListener
-// Rollbar.configure.addEventListener('submit', (e) => {
-// // let messages = []
-// if(Rollbar.configure.value === '' || Rollbar.configure.value == null){
-// //  messages.push ('Name is required')
-// alert('Name is required');
+Rollbar.configure.addEventListener('submit', (e) => {
+// let messages = []
+if(Rollbar.configure.value === '' || Rollbar.configure.value == null){
+//  messages.push ('Name is required')
+alert('Name is required');
 // Rollbar.error.push('Name is required');
-// }
+Rollbar.critical.push("Name is required.");
+}
 // if(Rollbar.configure === '' || Rollbar.configure == null){
 // //  messages.push ('Please enter the card number')
 // alert('Please enter the card number');
@@ -118,7 +123,7 @@ else ( Rollbar.configure === "")
 // e.preventDefault()
 // //  rollbar.captureEvent(metadata, level);
 
-// });
+});
 
 
  
